@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_text_god_Edict_Icon"
+		texturefile = "gfx/interface/icons/god_Edict_Icon.dds"
+	}
+}
