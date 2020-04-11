@@ -49,6 +49,7 @@
     <Compile Include="Data\ModifierGenerator.cs" />
     <Compile Include="Data\StaticsGenerator.cs" />
     <Compile Include="Edicts.cs" />
+    <Compile Include="Helpers\ModifiersHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
