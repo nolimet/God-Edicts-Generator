@@ -38,7 +38,7 @@ namespace GodEdictGen
             Console.WriteLine($"PATH : {System.IO.Directory.GetCurrentDirectory()}");
             Console.WriteLine();
 
-            await Task.Delay(1000);
+            await Task.Delay(100);
             await FileWriter.WriteFileTXT(EdictToggleGenerator.GenerateFile(edicts), "edicts", @"common\edicts");
             await FileWriter.WriteFileTXT(EventGenerator.GenerateFile(edicts), "events", @"events");
             await FileWriter.WriteFileTXT(StaticEdictGenerator.Join(edicts.All), "statics", @"common\static_modifiers");

@@ -331,6 +331,15 @@ namespace GodEdictGen
                {
                    new ModifierGenerator("planet_colony_development_speed_mult", 20)
                }
+            ) ,
+            new StaticEdictGenerator
+            (
+               name:"Terraforming_Overdrive",
+               modifiers: new ModifierGenerator[]
+               {
+                   new ModifierGenerator("terraform_speed_mult", 10),
+                   new ModifierGenerator("terraforming_cost_mult", -0.90)
+               }
             )
        };
 
