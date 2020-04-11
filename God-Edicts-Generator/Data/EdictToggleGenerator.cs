@@ -1,11 +1,11 @@
-﻿namespace TextGen.Data
+﻿namespace GodEdictGen.Data
 {
-    public struct EdictGenerator
+    public struct EdictToggleGenerator
     {
         public readonly string edictName;
         public readonly int edictNumber0, edictNumber1;
 
-        public EdictGenerator(string editName, int edictNumber0, int edictNumber1)
+        public EdictToggleGenerator(string editName, int edictNumber0, int edictNumber1)
         {
             this.edictName = editName;
             this.edictNumber0 = edictNumber0;
