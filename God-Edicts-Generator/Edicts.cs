@@ -133,7 +133,6 @@ namespace GodEdictGen
                        "exotic_gases",
                        "minerals",
                        "nanites",
-                       //"produces",
                        "rare_crystals",
                        "sr_dark_matter",
                        "sr_living_metal",
@@ -332,14 +331,22 @@ namespace GodEdictGen
                {
                    new ModifierGenerator("planet_colony_development_speed_mult", 20)
                }
+            ),
+            new StaticEdictGenerator
+            (
+               name:"acension_test",
+               modifiers: new ModifierGenerator[]
+               {
+                   new ModifierGenerator("ascension_perks_add", 4)
+               }
             )
        };
 
         /*
             ,
-            new StaticsGenerator
+            new StaticEdictGenerator
             (
-               edictName:"",
+               name:"",
                modifiers: new ModifierGenerator[]
                {
                }
