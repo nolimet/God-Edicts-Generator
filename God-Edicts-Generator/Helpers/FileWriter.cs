@@ -57,6 +57,9 @@ namespace GodEdictGen.Helpers
                 }
             }
 
+            Console.WriteLine($"wrote {file.Length} bytes to {file.FullName.Substring(outputDir.FullName.Length + 1)}");
+
+
             if (Program.DumpFileContent)
             {
                 Console.WriteLine();
