@@ -1,4 +1,6 @@
-﻿namespace GodEdictGen.Data
+﻿using System.Collections.Generic;
+
+namespace GodEdictGen.Data
 {
     public struct EdictToggleGenerator
     {
@@ -58,6 +60,17 @@
     "	\n" +
     "	ai_weight = { weight = 0 }\n" +
     "}\n\n";
+        }
+
+        public static string GenerateFile(Edicts edicts)
+        {
+            int k = 0;
+            List<EdictToggleGenerator> edictElements = new List<EdictToggleGenerator>();
+            for (int i = 0; i < edicts.Length; i++)
+            {
+                edictElements.Add(new EdictToggleGenerator(edicts[i].name, k++, k++));
+            }
+            return string.Join("", edictElements);
         }
     }
 }

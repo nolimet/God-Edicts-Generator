@@ -26,8 +26,19 @@ namespace GodEdictGen.Data
         public static string Join(IEnumerable<LangueGenerator> generators, string langueName)
         {
             return
- $"l_{langueName}:\n\n" +
- string.Join("", generators);
+             $"l_{langueName}:\n\n" +
+             string.Join("", generators);
+        }
+
+        public static string GenerateFile(Edicts edicts, string langueName)
+        {
+            List<LangueGenerator> generators = new List<LangueGenerator>();
+            for (int i = 0; i < edicts.Length; i++)
+            {
+                generators.Add(new LangueGenerator(edicts[i]));
+            }
+
+            return Join(generators, langueName);
         }
     }
 }
