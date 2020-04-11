@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\EdictGenerator.cs" />
+    <Compile Include="Data\EdictToggleGenerator.cs" />
     <Compile Include="Data\EventGenerator.cs" />
     <Compile Include="Data\LangueGenerator.cs" />
     <Compile Include="Data\ModifierGenerator.cs" />
-    <Compile Include="Data\StaticsGenerator.cs" />
+    <Compile Include="Data\StaticEdictGenerator.cs" />
     <Compile Include="Edicts.cs" />
     <Compile Include="Helpers\ModifiersHelper.cs" />
     <Compile Include="Program.cs" />
