@@ -40,7 +40,23 @@ namespace GodEdictGen.Helpers
 
         private static async Task WriteText(string value, string fullPath, Encoding encoding)
         {
-            await WriteBytes(encoding.GetBytes(value),fullPath);
+            FileInfo file = new FileInfo(fullPath);
+            using (var fileStream = file.Exists? file.OpenWrite() : file.Create())
+            {
+                using (var writer = new StreamWriter(fileStream, encoding))
+                {
+                    try
+                    {
+                        await writer.WriteAsync(value);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Write(e);
+                        return;
+                    }
+                }
+            }
+
             if (Program.DumpFileContent)
             {
                 Console.WriteLine();
@@ -55,9 +71,17 @@ namespace GodEdictGen.Helpers
         {
             FileInfo file = new FileInfo(fullPath);
 
-            using (var writer = file.OpenWrite())
+            using (var fileStream = file.Exists ? file.OpenWrite() : file.Create())
             {
-                await writer.WriteAsync(data,0,data.Length);
+                try
+                {
+                    await fileStream.WriteAsync(data, 0, data.Length);
+                }
+                catch(Exception e)
+                {
+                    Console.Write(e);
+                    return;
+                }
             }
 
             Console.WriteLine($"wrote {data.Length} bytes to {fullPath.Substring(outputDir.FullName.Length+1)}");
