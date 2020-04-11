@@ -4,9 +4,9 @@ namespace GodEdictGen.Data
 {
     public class LangueGenerator
     {
-        public readonly StaticsGenerator edict;
+        public readonly StaticEdictGenerator edict;
 
-        public LangueGenerator(StaticsGenerator edict)
+        public LangueGenerator(StaticEdictGenerator edict)
         {
             this.edict = edict;
         }
