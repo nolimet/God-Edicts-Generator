@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using TextGen.Data;
-
-namespace TextGen
+using GodEdictGen.Data;
+using GodEdictGen.Helpers;
+namespace GodEdictGen
 {
     public class Edicts
     {

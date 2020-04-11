@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using TextGen.Data;
+using GodEdictGen.Data;
 
-namespace TextGen
+namespace GodEdictGen
 {
     internal class Program
     {

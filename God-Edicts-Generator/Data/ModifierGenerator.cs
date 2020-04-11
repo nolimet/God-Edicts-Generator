@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace TextGen.Data
+namespace GodEdictGen.Data
 {
     public class ModifierGenerator
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TextGen.Data
+namespace GodEdictGen.Data
 {
     public class EventGenerator
     {
