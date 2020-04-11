@@ -5,22 +5,47 @@ namespace TextGen.Data
 {
     public class ModifierGenerator
     {
+        private static readonly NumberFormatInfo modiferValueFormat = new NumberFormatInfo()
+        {
+            NumberGroupSeparator = "",
+            NumberDecimalSeparator = "."
+        };
+
         private string modifierName;
-        private string modifierValue;
+        private string modifierValueString;
+        private double? modifierValue;
+
+        public string ModifierValue
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(modifierValueString))
+                    return modifierValueString;
+                if (modifierValue != null)
+                {
+                    return ModifierValueDouble.ToString(modiferValueFormat);
+                }
+
+                return string.Empty;
+            }
+        }
+
+        public double ModifierValueDouble => (modifierValue ?? 00);
+
 
         public ModifierGenerator(string modifierName, string modifierValue)
         {
             this.modifierName = modifierName;
-            this.modifierValue = modifierValue;
+            this.modifierValueString = modifierValue;
         }
 
         public ModifierGenerator(string modifierName, double modifierValue)
         {
             this.modifierName = modifierName;
-            this.modifierValue = modifierValue.ToString();
+            this.modifierValue = modifierValue;
         }
 
-        public static ModifierGenerator[] GenerateSet(string modifierFormat, double modifierValue, params string[] modifierNames)
+        public static IReadOnlyList<ModifierGenerator> GenerateSet(string modifierFormat, double modifierValue, params string[] modifierNames)
         {
             var sets = new ModifierGenerator[modifierNames.Length];
             for (int i = 0; i < modifierNames.Length; i++)
@@ -32,7 +57,7 @@ namespace TextGen.Data
 
         public override string ToString()
         {
-            return $"\t{modifierName} = {modifierValue}";
+            return $"\t{modifierName} = {ModifierValue}";
         }
 
         public static string Join(IEnumerable<ModifierGenerator> modifiers)
@@ -42,8 +67,8 @@ namespace TextGen.Data
             {
                 result.AppendLine(modifier.ToString());
             }
-
-            return result.ToString();
+           
+            return result.ToString().TrimEnd('\n');
         }
     }
 }
