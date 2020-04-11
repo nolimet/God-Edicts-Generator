@@ -36,10 +36,10 @@ namespace GodEdictGen
             string createEdictFile()
             {
                 int k = 0;
-                List<EdictGenerator> edictElements = new List<EdictGenerator>();
+                List<EdictToggleGenerator> edictElements = new List<EdictToggleGenerator>();
                 for (int i = 0; i < edicts.Length; i++)
                 {
-                    edictElements.Add(new EdictGenerator(edicts[i].name, k++, k++));
+                    edictElements.Add(new EdictToggleGenerator(edicts[i].name, k++, k++));
                 }
                 return string.Join("", edictElements);
             }
@@ -68,7 +68,7 @@ namespace GodEdictGen
 
             string createStaticsFile()
             {
-                return StaticsGenerator.Join(edicts.All);
+                return StaticEdictGenerator.Join(edicts.All);
             }
 
             void writeFileTXT(string value, string fileName, string folder = "")
