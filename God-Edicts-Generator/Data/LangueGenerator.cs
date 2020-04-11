@@ -4,22 +4,23 @@ namespace TextGen.Data
 {
     public class LangueGenerator
     {
-        public readonly string edictName;
+        public readonly StaticsGenerator edict;
 
-        public LangueGenerator(string edictName)
+        public LangueGenerator(StaticsGenerator edict)
         {
-            this.edictName = edictName;
+            this.edict = edict;
         }
 
         public override string ToString()
         {
             return
-$"#godEdict_{edictName}\n" +
-$"edict_godEdict_{edictName}_on:0 \"£trigger_no Enable {edictName.Replace("_", " ")} \"\n" +
-$"edict_godEdict_{edictName}_off:0 \"£trigger_yes Disable {edictName.Replace("_", " ")} \"\n" +
-"\n" +
-$"edict_godEdict_{edictName}_on_desc:0 \"Enable {edictName.Replace("_", " ")} modifier \"\n" +
-$"edict_godEdict_{edictName}_off_desc:0 \"Disable {edictName.Replace("_", " ")} modifier \"\n\n";
+            $"#godEdict_{edict.name}\n" +
+            $"godEdict_{edict.name}:0 \"£god_Edict_Icon {edict.nicename} \"\n" +
+            $"edict_godEdict_{edict.name}_on:0 \"£trigger_no Enable {edict.nicename} \"\n" +
+            $"edict_godEdict_{edict.name}_off:0 \"£trigger_yes Disable {edict.nicename} \"\n" +
+            "\n" +
+            $"edict_godEdict_{edict.name}_on_desc:0 \"Enable {edict.nicename} modifier \"\n" +
+            $"edict_godEdict_{edict.name}_off_desc:0 \"Disable {edict.nicename} modifier \"\n\n";
         }
 
         public static string Join(IEnumerable<LangueGenerator> generators, string langueName)

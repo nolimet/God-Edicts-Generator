@@ -60,7 +60,7 @@ namespace TextGen
                 List<LangueGenerator> generators = new List<LangueGenerator>();
                 for (int i = 0; i < edicts.Length; i++)
                 {
-                    generators.Add(new LangueGenerator(edicts[i].name));
+                    generators.Add(new LangueGenerator(edicts[i]));
                 }
 
                 return LangueGenerator.Join(generators, langueName);
