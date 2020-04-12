@@ -17,7 +17,7 @@ namespace GodEdictGen
                     new ModifierGenerator("planet_building_cost_mult",5),
                     new ModifierGenerator("planet_building_build_speed_mult",5),
                     new ModifierGenerator("pop_happiness",5),
-                    new ModifierGenerator("country_ship_upgrade_cost_mult",-5),
+                    new ModifierGenerator("country_ship_upgrade_cost_mult",-.99),
                     new ModifierGenerator("leader_skill_levels",5),
                     new ModifierGenerator("species_leader_exp_gain",  5),
                     new ModifierGenerator("leader_age", 90000),
@@ -26,26 +26,14 @@ namespace GodEdictGen
                     new ModifierGenerator("planet_pops_consumer_goods_upkeep_mult",-0.95)
                }.AddSet
                (
-                   modifierFormat: "country_minerals_produces_mult",
+                   modifierFormat: "country_{0}_produces_mult",
                    modifierValue:5,
-                   modifierNames:new string[]
-                   {
-                       "energy",
-                       "minerals",
-                       "alloys",
-                       "food",
-                       "unity"
-                   }
+                   modifierNames:ModifierNamesData.GeneralResources
                 ).AddSet
                 (
                    modifierFormat:"country_{0}_tech_research_speed",
                    modifierValue:5,
-                   modifierNames: new string[]
-                   {
-                       "engineering",
-                       "society",
-                       "physics"
-                   }
+                   modifierNames: ModifierNamesData.ScienceResources
                 ).AddSet
                 (
                    modifierFormat:"ship_{0}_mult",
@@ -80,10 +68,12 @@ namespace GodEdictGen
                modifiers: new ModifierGenerator[]
                {
                    new ModifierGenerator("station_researchers_produces_mult", 10),
-                   new ModifierGenerator("planet_researchers_physics_research_produces_mult",0.2),
-                   new ModifierGenerator("planet_researchers_society_research_produces_mult", 0.2),
-                   new ModifierGenerator("planet_researchers_engineering_research_produces_mult",0.2)
-               }
+               }.AddSet
+                (
+                   modifierFormat:"planet_researchers_{0}_produces_mult",
+                   modifierValue: 2,
+                   modifierNames: ModifierNamesData.ScienceResources
+                )
             ),
            new StaticEdictGenerator
             (
@@ -108,14 +98,7 @@ namespace GodEdictGen
                 (
                     modifierFormat:"country_{0}_produces_mult",
                     modifierValue: 40,
-                    modifierNames:new string[]
-                    {
-                        "energy",
-                        "minerals",
-                        "alloys",
-                        "food",
-                        "consumer_goods"
-                    }
+                    modifierNames:ModifierNamesData.GeneralResources
                 )
             ),
            new StaticEdictGenerator
@@ -125,20 +108,7 @@ namespace GodEdictGen
                (
                    modifierFormat:"country_resource_max_{0}_add",
                    modifierValue: 1_000_000,
-                   modifierNames: new string[]
-                   {
-                       "alloys",
-                       "consumer_goods",
-                       "energy",
-                       "exotic_gases",
-                       "minerals",
-                       "nanites",
-                       "rare_crystals",
-                       "sr_dark_matter",
-                       "sr_living_metal",
-                       "sr_zro",
-                       "volatile_motes"
-                   }
+                   modifierNames:ModifierNamesData.ConstructionResources
                )
             ),
            new StaticEdictGenerator
@@ -210,7 +180,8 @@ namespace GodEdictGen
                {
                    new ModifierGenerator("pop_growth_speed", 100),
                    //new ModifierGenerator("pop_robot_build_speed_mult",100),
-                   new ModifierGenerator("planet_pop_assembly_mult", 100)
+                   new ModifierGenerator("planet_pop_assembly_add", 100)
+
                }
             ),
            new StaticEdictGenerator
@@ -222,14 +193,14 @@ namespace GodEdictGen
                    //new ModifierGenerator("mod_megastructure_build_cost_mult", -1.0)
                }
             ),
-           new StaticEdictGenerator
-            (
-               name:"planet_fortification_booster",
-               modifiers: new ModifierGenerator[]
-               {
-                   //new ModifierGenerator("planet_fortification_strength", 20)
-               }
-            ),
+           //new StaticEdictGenerator
+           // (
+           //    name:"planet_fortification_booster",
+           //    modifiers: new ModifierGenerator[]
+           //    {
+           //        //new ModifierGenerator("planet_fortification_strength", 20)
+           //    }
+           // ),
            new StaticEdictGenerator
             (
                name:"more_leaders",
@@ -247,14 +218,14 @@ namespace GodEdictGen
                    new ModifierGenerator("country_trade_attractiveness", 20)
                }
             ),
-           new StaticEdictGenerator
-            (
-               name:"Core_System",
-               modifiers: new ModifierGenerator[]
-               {
-                   //new ModifierGenerator("country_core_sector_system_cap",20)
-               }
-            ),
+           //new StaticEdictGenerator
+           // (
+           //    name:"Core_System",
+           //    modifiers: new ModifierGenerator[]
+           //    {
+           //        //new ModifierGenerator("country_core_sector_system_cap",20)
+           //    }
+           // ),
            new StaticEdictGenerator
             (
                name:"Cheep_Fast_Orbital",
@@ -277,16 +248,7 @@ namespace GodEdictGen
                 (
                    modifierFormat:"country_{0}_produces_mult",
                    modifierValue: 30,
-                   modifierNames: new string[]
-                   {
-                       "exotic_gases",
-                       "nanites",
-                       "rare_crystals",
-                       "sr_dark_matter",
-                       "sr_living_metal",
-                       "sr_zro",
-                       "volatile_motes"
-                   }
+                   modifierNames: ModifierNamesData.RareResouces
                 )
             ),
             new StaticEdictGenerator
@@ -296,16 +258,7 @@ namespace GodEdictGen
                 (
                    modifierFormat:"country_base_{0}_produces_add",
                    modifierValue: 1000,
-                   modifierNames: new string[]
-                   {
-                       "exotic_gases",
-                       "rare_crystals",
-                       "volatile_motes",
-                       "sr_dark_matter",
-                       "sr_living_metal",
-                       "sr_zro",
-                       "nanites",
-                   }
+                   modifierNames: ModifierNamesData.RareResouces
                 )
             ),
            new StaticEdictGenerator
@@ -340,7 +293,46 @@ namespace GodEdictGen
                    new ModifierGenerator("terraform_speed_mult", 10),
                    new ModifierGenerator("terraforming_cost_mult", -0.90)
                }
+            ),
+            new StaticEdictGenerator
+            (
+               name:"Shipyard_Overdrive",
+               modifiers: new ModifierGenerator[]
+               {
+                   new ModifierGenerator("country_ship_upgrade_cost_mult",-.99),
+               }
+            ),
+            new StaticEdictGenerator
+            (
+               name:"Shipbuild_Speed_Override",
+               modifiers: ModifierGenerator.GenerateSet
+                (
+                   modifierFormat: "ship_{0}_cost_mult",
+                   modifierValue: -.99,
+                   modifierNames: ModifierNamesData.ShipClasses
+                ).AddSet
+                (
+                   modifierFormat: "shipsize_{0}_build_speed_mult",
+                   modifierValue: 10,
+                   modifierNames: ModifierNamesData.ShipClasses
+                )
+            ),
+            new StaticEdictGenerator
+            (
+               name:"Station_Build_Speed_Override",
+               modifiers: ModifierGenerator.GenerateSet
+                (
+                   modifierFormat: "shipclass_{0}_build_speed_mult",
+                   modifierValue: 10,
+                   modifierNames: ModifierNamesData.StationClasses
+                ).AddSet
+                (
+                   modifierFormat: "shipclass_{0}_build_build_cost",
+                   modifierValue: 10,
+                   modifierNames: ModifierNamesData.StationClasses
+                )
             )
+
        };
 
         /*
