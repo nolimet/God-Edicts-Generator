@@ -51,6 +51,7 @@
     <Compile Include="Edicts.cs" />
     <Compile Include="Helpers\FileWriter.cs" />
     <Compile Include="Helpers\ModifiersHelper.cs" />
+    <Compile Include="ModifierNamesData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
