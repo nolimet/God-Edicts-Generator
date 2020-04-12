@@ -116,7 +116,9 @@ namespace GodEdictGen
                name:"Pop_happiness_boost",
                modifiers: new ModifierGenerator[]
                {
-                   new ModifierGenerator("pop_happiness",40)
+                   new ModifierGenerator("pop_happiness",40),
+                   new ModifierGenerator("planet_stability_add", 200),
+                   new ModifierGenerator("pop_amenities_usage_mult",-.99)
                }
             ),
            new StaticEdictGenerator
