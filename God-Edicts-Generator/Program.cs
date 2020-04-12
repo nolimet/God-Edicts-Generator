@@ -46,6 +46,8 @@ namespace GodEdictGen
             await FileWriter.WriteFileYML(LangueGenerator.GenerateFile(edicts, "english"), "english", @"localisation");
 
             Console.ReadKey();
+            Console.WriteLine("Exiting program");
+            await Task.Delay(500);
         }
     }
 }
