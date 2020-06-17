@@ -1,0 +1,263 @@
+---
+name: Translation
+about: Describe this issue template's purpose here.
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+when adding a translation for a language please follow the following template that is in english.
+
+Help resource when creating a translation https://stellaris.paradoxwikis.com/Localisation_modding  
+Make sure you have read the help resource as it describes how the files are structured
+```  
+ l_english:
+
+#godEdict_God_Mode
+godEdict_God_Mode:0 "£god_Edict_Icon£ God Mode "
+edict_godEdict_God_Mode_on:0 "£god_Edict_Icon£ £trigger_no Enable God Mode "
+edict_godEdict_God_Mode_off:0 "£god_Edict_Icon£ £trigger_yes Disable God Mode "
+
+edict_godEdict_God_Mode_on_desc:0 "Enable God Mode modifier "
+edict_godEdict_God_Mode_off_desc:0 "Disable God Mode modifier "
+
+#godEdict_Leader_Age
+godEdict_Leader_Age:0 "£god_Edict_Icon£ Leader Age "
+edict_godEdict_Leader_Age_on:0 "£god_Edict_Icon£ £trigger_no Enable Leader Age "
+edict_godEdict_Leader_Age_off:0 "£god_Edict_Icon£ £trigger_yes Disable Leader Age "
+
+edict_godEdict_Leader_Age_on_desc:0 "Enable Leader Age modifier "
+edict_godEdict_Leader_Age_off_desc:0 "Disable Leader Age modifier "
+
+#godEdict_Research_Speedup
+godEdict_Research_Speedup:0 "£god_Edict_Icon£ Research Speedup "
+edict_godEdict_Research_Speedup_on:0 "£god_Edict_Icon£ £trigger_no Enable Research Speedup "
+edict_godEdict_Research_Speedup_off:0 "£god_Edict_Icon£ £trigger_yes Disable Research Speedup "
+
+edict_godEdict_Research_Speedup_on_desc:0 "Enable Research Speedup modifier "
+edict_godEdict_Research_Speedup_off_desc:0 "Disable Research Speedup modifier "
+
+#godEdict_Research_Income
+godEdict_Research_Income:0 "£god_Edict_Icon£ Research Income "
+edict_godEdict_Research_Income_on:0 "£god_Edict_Icon£ £trigger_no Enable Research Income "
+edict_godEdict_Research_Income_off:0 "£god_Edict_Icon£ £trigger_yes Disable Research Income "
+
+edict_godEdict_Research_Income_on_desc:0 "Enable Research Income modifier "
+edict_godEdict_Research_Income_off_desc:0 "Disable Research Income modifier "
+
+#godEdict_Research_Alts_Add_5
+godEdict_Research_Alts_Add_5:0 "£god_Edict_Icon£ Research Alts Add 5 "
+edict_godEdict_Research_Alts_Add_5_on:0 "£god_Edict_Icon£ £trigger_no Enable Research Alts Add 5 "
+edict_godEdict_Research_Alts_Add_5_off:0 "£god_Edict_Icon£ £trigger_yes Disable Research Alts Add 5 "
+
+edict_godEdict_Research_Alts_Add_5_on_desc:0 "Enable Research Alts Add 5 modifier "
+edict_godEdict_Research_Alts_Add_5_off_desc:0 "Disable Research Alts Add 5 modifier "
+
+#godEdict_Research_Alts_Add_5_More
+godEdict_Research_Alts_Add_5_More:0 "£god_Edict_Icon£ Research Alts Add 5 More "
+edict_godEdict_Research_Alts_Add_5_More_on:0 "£god_Edict_Icon£ £trigger_no Enable Research Alts Add 5 More "
+edict_godEdict_Research_Alts_Add_5_More_off:0 "£god_Edict_Icon£ £trigger_yes Disable Research Alts Add 5 More "
+
+edict_godEdict_Research_Alts_Add_5_More_on_desc:0 "Enable Research Alts Add 5 More modifier "
+edict_godEdict_Research_Alts_Add_5_More_off_desc:0 "Disable Research Alts Add 5 More modifier "
+
+#godEdict_Resource_Incomeboost
+godEdict_Resource_Incomeboost:0 "£god_Edict_Icon£ Resource Incomeboost "
+edict_godEdict_Resource_Incomeboost_on:0 "£god_Edict_Icon£ £trigger_no Enable Resource Incomeboost "
+edict_godEdict_Resource_Incomeboost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Resource Incomeboost "
+
+edict_godEdict_Resource_Incomeboost_on_desc:0 "Enable Resource Incomeboost modifier "
+edict_godEdict_Resource_Incomeboost_off_desc:0 "Disable Resource Incomeboost modifier "
+
+#godEdict_Resource_Storage_Add_1M
+godEdict_Resource_Storage_Add_1M:0 "£god_Edict_Icon£ Resource Storage Add 1M "
+edict_godEdict_Resource_Storage_Add_1M_on:0 "£god_Edict_Icon£ £trigger_no Enable Resource Storage Add 1M "
+edict_godEdict_Resource_Storage_Add_1M_off:0 "£god_Edict_Icon£ £trigger_yes Disable Resource Storage Add 1M "
+
+edict_godEdict_Resource_Storage_Add_1M_on_desc:0 "Enable Resource Storage Add 1M modifier "
+edict_godEdict_Resource_Storage_Add_1M_off_desc:0 "Disable Resource Storage Add 1M modifier "
+
+#godEdict_Pop_happiness_boost
+godEdict_Pop_happiness_boost:0 "£god_Edict_Icon£ Pop happiness boost "
+edict_godEdict_Pop_happiness_boost_on:0 "£god_Edict_Icon£ £trigger_no Enable Pop happiness boost "
+edict_godEdict_Pop_happiness_boost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Pop happiness boost "
+
+edict_godEdict_Pop_happiness_boost_on_desc:0 "Enable Pop happiness boost modifier "
+edict_godEdict_Pop_happiness_boost_off_desc:0 "Disable Pop happiness boost modifier "
+
+#godEdict_Navy_boost
+godEdict_Navy_boost:0 "£god_Edict_Icon£ Navy boost "
+edict_godEdict_Navy_boost_on:0 "£god_Edict_Icon£ £trigger_no Enable Navy boost "
+edict_godEdict_Navy_boost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Navy boost "
+
+edict_godEdict_Navy_boost_on_desc:0 "Enable Navy boost modifier "
+edict_godEdict_Navy_boost_off_desc:0 "Disable Navy boost modifier "
+
+#godEdict_Influence_Boost
+godEdict_Influence_Boost:0 "£god_Edict_Icon£ Influence Boost "
+edict_godEdict_Influence_Boost_on:0 "£god_Edict_Icon£ £trigger_no Enable Influence Boost "
+edict_godEdict_Influence_Boost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Influence Boost "
+
+edict_godEdict_Influence_Boost_on_desc:0 "Enable Influence Boost modifier "
+edict_godEdict_Influence_Boost_off_desc:0 "Disable Influence Boost modifier "
+
+#godEdict_Ship_Boost
+godEdict_Ship_Boost:0 "£god_Edict_Icon£ Ship Boost "
+edict_godEdict_Ship_Boost_on:0 "£god_Edict_Icon£ £trigger_no Enable Ship Boost "
+edict_godEdict_Ship_Boost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Ship Boost "
+
+edict_godEdict_Ship_Boost_on_desc:0 "Enable Ship Boost modifier "
+edict_godEdict_Ship_Boost_off_desc:0 "Disable Ship Boost modifier "
+
+#godEdict_Leader_Boost
+godEdict_Leader_Boost:0 "£god_Edict_Icon£ Leader Boost "
+edict_godEdict_Leader_Boost_on:0 "£god_Edict_Icon£ £trigger_no Enable Leader Boost "
+edict_godEdict_Leader_Boost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Leader Boost "
+
+edict_godEdict_Leader_Boost_on_desc:0 "Enable Leader Boost modifier "
+edict_godEdict_Leader_Boost_off_desc:0 "Disable Leader Boost modifier "
+
+#godEdict_Planet_Boost
+godEdict_Planet_Boost:0 "£god_Edict_Icon£ Planet Boost "
+edict_godEdict_Planet_Boost_on:0 "£god_Edict_Icon£ £trigger_no Enable Planet Boost "
+edict_godEdict_Planet_Boost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Planet Boost "
+
+edict_godEdict_Planet_Boost_on_desc:0 "Enable Planet Boost modifier "
+edict_godEdict_Planet_Boost_off_desc:0 "Disable Planet Boost modifier "
+
+#godEdict_Unity_Boost
+godEdict_Unity_Boost:0 "£god_Edict_Icon£ Unity Boost "
+edict_godEdict_Unity_Boost_on:0 "£god_Edict_Icon£ £trigger_no Enable Unity Boost "
+edict_godEdict_Unity_Boost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Unity Boost "
+
+edict_godEdict_Unity_Boost_on_desc:0 "Enable Unity Boost modifier "
+edict_godEdict_Unity_Boost_off_desc:0 "Disable Unity Boost modifier "
+
+#godEdict_Pop_growth_boost
+godEdict_Pop_growth_boost:0 "£god_Edict_Icon£ Pop growth boost "
+edict_godEdict_Pop_growth_boost_on:0 "£god_Edict_Icon£ £trigger_no Enable Pop growth boost "
+edict_godEdict_Pop_growth_boost_off:0 "£god_Edict_Icon£ £trigger_yes Disable Pop growth boost "
+
+edict_godEdict_Pop_growth_boost_on_desc:0 "Enable Pop growth boost modifier "
+edict_godEdict_Pop_growth_boost_off_desc:0 "Disable Pop growth boost modifier "
+
+#godEdict_megastructure_booster
+godEdict_megastructure_booster:0 "£god_Edict_Icon£ megastructure booster "
+edict_godEdict_megastructure_booster_on:0 "£god_Edict_Icon£ £trigger_no Enable megastructure booster "
+edict_godEdict_megastructure_booster_off:0 "£god_Edict_Icon£ £trigger_yes Disable megastructure booster "
+
+edict_godEdict_megastructure_booster_on_desc:0 "Enable megastructure booster modifier "
+edict_godEdict_megastructure_booster_off_desc:0 "Disable megastructure booster modifier "
+
+#godEdict_more_leaders
+godEdict_more_leaders:0 "£god_Edict_Icon£ more leaders "
+edict_godEdict_more_leaders_on:0 "£god_Edict_Icon£ £trigger_no Enable more leaders "
+edict_godEdict_more_leaders_off:0 "£god_Edict_Icon£ £trigger_yes Disable more leaders "
+
+edict_godEdict_more_leaders_on_desc:0 "Enable more leaders modifier "
+edict_godEdict_more_leaders_off_desc:0 "Disable more leaders modifier "
+
+#godEdict_Trade_Attactive
+godEdict_Trade_Attactive:0 "£god_Edict_Icon£ Trade Attactive "
+edict_godEdict_Trade_Attactive_on:0 "£god_Edict_Icon£ £trigger_no Enable Trade Attactive "
+edict_godEdict_Trade_Attactive_off:0 "£god_Edict_Icon£ £trigger_yes Disable Trade Attactive "
+
+edict_godEdict_Trade_Attactive_on_desc:0 "Enable Trade Attactive modifier "
+edict_godEdict_Trade_Attactive_off_desc:0 "Disable Trade Attactive modifier "
+
+#godEdict_Cheep_Fast_Orbital
+godEdict_Cheep_Fast_Orbital:0 "£god_Edict_Icon£ Cheep Fast Orbital "
+edict_godEdict_Cheep_Fast_Orbital_on:0 "£god_Edict_Icon£ £trigger_no Enable Cheep Fast Orbital "
+edict_godEdict_Cheep_Fast_Orbital_off:0 "£god_Edict_Icon£ £trigger_yes Disable Cheep Fast Orbital "
+
+edict_godEdict_Cheep_Fast_Orbital_on_desc:0 "Enable Cheep Fast Orbital modifier "
+edict_godEdict_Cheep_Fast_Orbital_off_desc:0 "Disable Cheep Fast Orbital modifier "
+
+#godEdict_Rare_Resouce_Boost_30x_Multiplier
+godEdict_Rare_Resouce_Boost_30x_Multiplier:0 "£god_Edict_Icon£ Rare Resouce Boost 30x Multiplier "
+edict_godEdict_Rare_Resouce_Boost_30x_Multiplier_on:0 "£god_Edict_Icon£ £trigger_no Enable Rare Resouce Boost 30x Multiplier "
+edict_godEdict_Rare_Resouce_Boost_30x_Multiplier_off:0 "£god_Edict_Icon£ £trigger_yes Disable Rare Resouce Boost 30x Multiplier "
+
+edict_godEdict_Rare_Resouce_Boost_30x_Multiplier_on_desc:0 "Enable Rare Resouce Boost 30x Multiplier modifier "
+edict_godEdict_Rare_Resouce_Boost_30x_Multiplier_off_desc:0 "Disable Rare Resouce Boost 30x Multiplier modifier "
+
+#godEdict_Rare_Resouce_Boost_1000_Add
+godEdict_Rare_Resouce_Boost_1000_Add:0 "£god_Edict_Icon£ Rare Resouce Boost 1000 Add "
+edict_godEdict_Rare_Resouce_Boost_1000_Add_on:0 "£god_Edict_Icon£ £trigger_no Enable Rare Resouce Boost 1000 Add "
+edict_godEdict_Rare_Resouce_Boost_1000_Add_off:0 "£god_Edict_Icon£ £trigger_yes Disable Rare Resouce Boost 1000 Add "
+
+edict_godEdict_Rare_Resouce_Boost_1000_Add_on_desc:0 "Enable Rare Resouce Boost 1000 Add modifier "
+edict_godEdict_Rare_Resouce_Boost_1000_Add_off_desc:0 "Disable Rare Resouce Boost 1000 Add modifier "
+
+#godEdict_Administrative_Overload_100x_Multiplier
+godEdict_Administrative_Overload_100x_Multiplier:0 "£god_Edict_Icon£ Administrative Overload 100x Multiplier "
+edict_godEdict_Administrative_Overload_100x_Multiplier_on:0 "£god_Edict_Icon£ £trigger_no Enable Administrative Overload 100x Multiplier "
+edict_godEdict_Administrative_Overload_100x_Multiplier_off:0 "£god_Edict_Icon£ £trigger_yes Disable Administrative Overload 100x Multiplier "
+
+edict_godEdict_Administrative_Overload_100x_Multiplier_on_desc:0 "Enable Administrative Overload 100x Multiplier modifier "
+edict_godEdict_Administrative_Overload_100x_Multiplier_off_desc:0 "Disable Administrative Overload 100x Multiplier modifier "
+
+#godEdict_Administrative_Overload_1000_Add
+godEdict_Administrative_Overload_1000_Add:0 "£god_Edict_Icon£ Administrative Overload 1000 Add "
+edict_godEdict_Administrative_Overload_1000_Add_on:0 "£god_Edict_Icon£ £trigger_no Enable Administrative Overload 1000 Add "
+edict_godEdict_Administrative_Overload_1000_Add_off:0 "£god_Edict_Icon£ £trigger_yes Disable Administrative Overload 1000 Add "
+
+edict_godEdict_Administrative_Overload_1000_Add_on_desc:0 "Enable Administrative Overload 1000 Add modifier "
+edict_godEdict_Administrative_Overload_1000_Add_off_desc:0 "Disable Administrative Overload 1000 Add modifier "
+
+#godEdict_Colonial_DevelopmentSpeed_Overload_20x
+godEdict_Colonial_DevelopmentSpeed_Overload_20x:0 "£god_Edict_Icon£ Colonial DevelopmentSpeed Overload 20x "
+edict_godEdict_Colonial_DevelopmentSpeed_Overload_20x_on:0 "£god_Edict_Icon£ £trigger_no Enable Colonial DevelopmentSpeed Overload 20x "
+edict_godEdict_Colonial_DevelopmentSpeed_Overload_20x_off:0 "£god_Edict_Icon£ £trigger_yes Disable Colonial DevelopmentSpeed Overload 20x "
+
+edict_godEdict_Colonial_DevelopmentSpeed_Overload_20x_on_desc:0 "Enable Colonial DevelopmentSpeed Overload 20x modifier "
+edict_godEdict_Colonial_DevelopmentSpeed_Overload_20x_off_desc:0 "Disable Colonial DevelopmentSpeed Overload 20x modifier "
+
+#godEdict_Terraforming_Overdrive
+godEdict_Terraforming_Overdrive:0 "£god_Edict_Icon£ Terraforming Overdrive "
+edict_godEdict_Terraforming_Overdrive_on:0 "£god_Edict_Icon£ £trigger_no Enable Terraforming Overdrive "
+edict_godEdict_Terraforming_Overdrive_off:0 "£god_Edict_Icon£ £trigger_yes Disable Terraforming Overdrive "
+
+edict_godEdict_Terraforming_Overdrive_on_desc:0 "Enable Terraforming Overdrive modifier "
+edict_godEdict_Terraforming_Overdrive_off_desc:0 "Disable Terraforming Overdrive modifier "
+
+#godEdict_Shipyard_Overdrive
+godEdict_Shipyard_Overdrive:0 "£god_Edict_Icon£ Shipyard Overdrive "
+edict_godEdict_Shipyard_Overdrive_on:0 "£god_Edict_Icon£ £trigger_no Enable Shipyard Overdrive "
+edict_godEdict_Shipyard_Overdrive_off:0 "£god_Edict_Icon£ £trigger_yes Disable Shipyard Overdrive "
+
+edict_godEdict_Shipyard_Overdrive_on_desc:0 "Enable Shipyard Overdrive modifier "
+edict_godEdict_Shipyard_Overdrive_off_desc:0 "Disable Shipyard Overdrive modifier "
+
+#godEdict_Shipbuild_Speed_Override
+godEdict_Shipbuild_Speed_Override:0 "£god_Edict_Icon£ Shipbuild Speed Override "
+edict_godEdict_Shipbuild_Speed_Override_on:0 "£god_Edict_Icon£ £trigger_no Enable Shipbuild Speed Override "
+edict_godEdict_Shipbuild_Speed_Override_off:0 "£god_Edict_Icon£ £trigger_yes Disable Shipbuild Speed Override "
+
+edict_godEdict_Shipbuild_Speed_Override_on_desc:0 "Enable Shipbuild Speed Override modifier "
+edict_godEdict_Shipbuild_Speed_Override_off_desc:0 "Disable Shipbuild Speed Override modifier "
+
+#godEdict_Station_Build_Speed_Override
+godEdict_Station_Build_Speed_Override:0 "£god_Edict_Icon£ Station Build Speed Override "
+edict_godEdict_Station_Build_Speed_Override_on:0 "£god_Edict_Icon£ £trigger_no Enable Station Build Speed Override "
+edict_godEdict_Station_Build_Speed_Override_off:0 "£god_Edict_Icon£ £trigger_yes Disable Station Build Speed Override "
+
+edict_godEdict_Station_Build_Speed_Override_on_desc:0 "Enable Station Build Speed Override modifier "
+edict_godEdict_Station_Build_Speed_Override_off_desc:0 "Disable Station Build Speed Override modifier "
+
+Speed_Override_on:0 "£god_Edict_Icon£ £trigger_no Enable Shipbuild Speed Override "
+edict_godEdict_Shipbuild_Speed_Override_off:0 "£god_Edict_Icon£ £trigger_yes Disable Shipbuild Speed Override "
+
+edict_godEdict_Shipbuild_Speed_Override_on_desc:0 "Enable Shipbuild Speed Override modifier "
+edict_godEdict_Shipbuild_Speed_Override_off_desc:0 "Disable Shipbuild Speed Override modifier "
+
+#godEdict_Station_Build_Speed_Override
+godEdict_Station_Build_Speed_Override:0 "£god_Edict_Icon£ Station Build Speed Override "
+edict_godEdict_Station_Build_Speed_Override_on:0 "£god_Edict_Icon£ £trigger_no Enable Station Build Speed Override "
+edict_godEdict_Station_Build_Speed_Override_off:0 "£god_Edict_Icon£ £trigger_yes Disable Station Build Speed Override "
+
+edict_godEdict_Station_Build_Speed_Override_on_desc:0 "Enable Station Build Speed Override modifier "
+edict_godEdict_Station_Build_Speed_Override_off_desc:0 "Disable Station Build Speed Override modifier "
+
+```
