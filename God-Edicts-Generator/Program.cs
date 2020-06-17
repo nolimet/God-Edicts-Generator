@@ -45,8 +45,9 @@ namespace GodEdictGen
 
             await FileWriter.WriteFileYML(LangueGenerator.GenerateFile(edicts, "english"), "english", @"localisation");
 
+            Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();
-            Console.WriteLine("Exiting program");
+            Console.WriteLine("\nExiting program");
             await Task.Delay(500);
         }
     }
