@@ -1,6 +1,6 @@
 ---
 name: Translation
-about: Describe this issue template's purpose here.
+about: Adding a new translation or improving one
 title: ''
 labels: ''
 assignees: ''
