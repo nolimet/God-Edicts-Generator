@@ -136,7 +136,8 @@ namespace GodEdictGen
                name:"Influence_Boost",
                modifiers: new ModifierGenerator[]
                {
-                   new ModifierGenerator("country_base_influence_produces_add", 1000)
+                   new ModifierGenerator("country_base_influence_produces_add", 1000),
+                   new ModifierGenerator("country_resource_max_influence_add", 1_000_000_000)
                }
             ),
            new StaticEdictGenerator
