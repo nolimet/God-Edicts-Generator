@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
-using GodEdictGen.Data;
+﻿using GodEdictGen.Data;
 using GodEdictGen.Helpers;
+using System.Collections.Generic;
+
 namespace GodEdictGen
 {
     public class Edicts
@@ -137,7 +138,7 @@ namespace GodEdictGen
                modifiers: new ModifierGenerator[]
                {
                    new ModifierGenerator("country_base_influence_produces_add", 1000),
-                   new ModifierGenerator("country_resource_max_influence_add", 1_000_000_000)
+                   new ModifierGenerator("country_resource_max_influence_add", 1_000_000)
                }
             ),
            new StaticEdictGenerator
@@ -184,7 +185,6 @@ namespace GodEdictGen
                    new ModifierGenerator("pop_growth_speed", 100),
                    //new ModifierGenerator("pop_robot_build_speed_mult",100),
                    new ModifierGenerator("planet_pop_assembly_add", 100)
-
                }
             ),
            new StaticEdictGenerator
@@ -335,7 +335,6 @@ namespace GodEdictGen
                    modifierNames: ModifierNamesData.StationClasses
                 )
             )
-
        };
 
         /*

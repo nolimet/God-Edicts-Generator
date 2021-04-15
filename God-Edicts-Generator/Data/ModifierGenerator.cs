@@ -33,7 +33,6 @@ namespace GodEdictGen.Data
 
         public double ModifierValueDouble => (modifierValue ?? 00);
 
-
         public ModifierGenerator(string modifierName, string modifierValue)
         {
             this.modifierName = modifierName;
@@ -68,7 +67,7 @@ namespace GodEdictGen.Data
             {
                 result.AppendLine(modifier.ToString());
             }
-           
+
             return result.ToString().TrimEnd('\n');
         }
     }

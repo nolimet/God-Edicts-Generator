@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,9 +14,9 @@ namespace GodEdictGen.Helpers
                 outputDir.Create();
         }
 
-        static readonly DirectoryInfo outputDir;
-        static readonly Encoding encoding = new UTF8Encoding(false);
-        static readonly Encoding encodingYML = new UTF8Encoding(true);
+        private static readonly DirectoryInfo outputDir;
+        private static readonly Encoding encoding = new UTF8Encoding(false);
+        private static readonly Encoding encodingYML = new UTF8Encoding(true);
 
         public static async Task WriteFileTXT(string value, string fileName, string folder = "")
         {
@@ -41,7 +39,7 @@ namespace GodEdictGen.Helpers
         private static async Task WriteText(string value, string fullPath, Encoding encoding)
         {
             FileInfo file = new FileInfo(fullPath);
-            using (var fileStream = file.Exists? file.OpenWrite() : file.Create())
+            using (var fileStream = file.Exists ? file.OpenWrite() : file.Create())
             {
                 using (var writer = new StreamWriter(fileStream, encoding))
                 {
@@ -58,7 +56,6 @@ namespace GodEdictGen.Helpers
             }
 
             Console.WriteLine($"wrote {file.Length} bytes to {file.FullName.Substring(outputDir.FullName.Length + 1)}");
-
 
             if (Program.DumpFileContent)
             {
@@ -80,14 +77,14 @@ namespace GodEdictGen.Helpers
                 {
                     await fileStream.WriteAsync(data, 0, data.Length);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     Console.Write(e);
                     return;
                 }
             }
 
-            Console.WriteLine($"wrote {data.Length} bytes to {fullPath.Substring(outputDir.FullName.Length+1)}");
+            Console.WriteLine($"wrote {data.Length} bytes to {fullPath.Substring(outputDir.FullName.Length + 1)}");
         }
     }
 }

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GodEdictGen.Data;
+﻿using GodEdictGen.Data;
 using GodEdictGen.Helpers;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GodEdictGen
 {
@@ -25,7 +22,7 @@ namespace GodEdictGen
             {
                 await GenerateEdictFile();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.Write(e);
             }

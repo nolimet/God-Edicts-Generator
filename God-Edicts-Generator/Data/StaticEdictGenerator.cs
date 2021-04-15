@@ -13,10 +13,10 @@ namespace GodEdictGen.Data
         {
             this.name = name;
             this.modifiers = modifiers;
-            nicename = name.Replace('_',' ');
+            nicename = name.Replace('_', ' ');
         }
 
-        public StaticEdictGenerator(string name,string nicename ,IReadOnlyList<ModifierGenerator> modifiers)
+        public StaticEdictGenerator(string name, string nicename, IReadOnlyList<ModifierGenerator> modifiers)
         {
             this.name = name;
             this.modifiers = modifiers;
