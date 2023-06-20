@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 
-namespace GodEdictGen.Data
+namespace GodEdictGen.Generators
 {
-    public struct EdictToggleGenerator
+    public readonly struct EdictToggleGenerator
     {
-        public readonly string edictName;
-        public readonly int edictNumber0, edictNumber1;
+        private readonly string edictName;
+        private readonly int edictNumberOn, edictNumberOff;
 
-        public EdictToggleGenerator(string editName, int edictNumber0, int edictNumber1)
+        public EdictToggleGenerator(string editName, int edictNumberOn, int edictNumberOff)
         {
             this.edictName = editName;
-            this.edictNumber0 = edictNumber0;
-            this.edictNumber1 = edictNumber1;
+            this.edictNumberOn = edictNumberOn;
+            this.edictNumberOff = edictNumberOff;
         }
 
         public override string ToString()
@@ -31,7 +31,7 @@ namespace GodEdictGen.Data
     "	\n" +
     "	effect = " +
     "		{\n" +
-    "			country_event = { id = godEdict_toggle." + edictNumber0 + " days = 0}\n" +
+    "			country_event = { id = godEdict_toggle." + edictNumberOn + " days = 0}\n" +
     "		}\n" +
     "	\n" +
     "	allow = {}\n" +
@@ -53,7 +53,7 @@ namespace GodEdictGen.Data
     "	}\n" +
     "	\n" +
     "	effect = {\n" +
-    "		country_event = { id = godEdict_toggle." + edictNumber1 + " days = 0}\n" +
+    "		country_event = { id = godEdict_toggle." + edictNumberOff + " days = 0}\n" +
     "	}\n" +
     "	\n" +
     "	allow = {}\n" +
@@ -68,7 +68,7 @@ namespace GodEdictGen.Data
             List<EdictToggleGenerator> edictElements = new List<EdictToggleGenerator>();
             for (int i = 0; i < edicts.Length; i++)
             {
-                edictElements.Add(new EdictToggleGenerator(edicts[i].name, k++, k++));
+                edictElements.Add(new EdictToggleGenerator(edicts[i].Name, k++, k++));
             }
             return string.Join("", edictElements);
         }

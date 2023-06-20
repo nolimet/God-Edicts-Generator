@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\EdictToggleGenerator.cs" />
-    <Compile Include="Data\EventGenerator.cs" />
-    <Compile Include="Data\LangueGenerator.cs" />
-    <Compile Include="Data\ModifierGenerator.cs" />
-    <Compile Include="Data\StaticEdictGenerator.cs" />
     <Compile Include="Edicts.cs" />
+    <Compile Include="Generators\EdictToggleGenerator.cs" />
+    <Compile Include="Generators\EventGenerator.cs" />
+    <Compile Include="Generators\LanguageGenerator.cs" />
+    <Compile Include="Generators\ModifierGenerator.cs" />
+    <Compile Include="Generators\StaticEdictGenerator.cs" />
     <Compile Include="Helpers\FileWriter.cs" />
     <Compile Include="Helpers\ModifiersHelper.cs" />
     <Compile Include="ModifierNamesData.cs" />
@@ -57,6 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

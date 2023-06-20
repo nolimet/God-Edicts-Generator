@@ -18,7 +18,7 @@ namespace GodEdictGen.Helpers
         private static readonly Encoding encoding = new UTF8Encoding(false);
         private static readonly Encoding encodingYML = new UTF8Encoding(true);
 
-        public static async Task WriteFileTXT(string value, string fileName, string folder = "")
+        public static async Task WriteFileTxt(string value, string fileName, string folder = "")
         {
             DirectoryInfo directory = outputDir.CreateSubdirectory(folder);
             if (!directory.Exists)
@@ -27,7 +27,7 @@ namespace GodEdictGen.Helpers
             await WriteText(value, $"{directory.FullName}\\godEdict_{fileName}.txt", encoding);
         }
 
-        public static async Task WriteFileYML(string value, string fileName, string folder = "")
+        public static async Task WriteFileYml(string value, string fileName, string folder = "")
         {
             DirectoryInfo directory = outputDir.CreateSubdirectory(folder);
             if (!directory.Exists)

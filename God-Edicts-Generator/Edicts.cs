@@ -1,4 +1,4 @@
-﻿using GodEdictGen.Data;
+﻿using GodEdictGen.Generators;
 using GodEdictGen.Helpers;
 using System.Collections.Generic;
 
@@ -109,7 +109,7 @@ namespace GodEdictGen
                (
                    modifierFormat:"country_resource_max_{0}_add",
                    modifierValue: 1_000_000,
-                   modifierNames:ModifierNamesData.ConstructionResources
+                   modifierNames:ModifierNamesData.AllResources
                )
             ),
            new StaticEdictGenerator
@@ -330,12 +330,12 @@ namespace GodEdictGen
                    modifierNames: ModifierNamesData.StationClasses
                 ).AddSet
                 (
-                   modifierFormat: "shipclass_{0}_build_build_cost",
+                   modifierFormat: "shipclass_{0}_build_cost",
                    modifierValue: 10,
                    modifierNames: ModifierNamesData.StationClasses
                 )
             )
-       };
+        };
 
         /*
             ,

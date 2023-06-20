@@ -1,36 +1,36 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace GodEdictGen.Data
+namespace GodEdictGen.Generators
 {
     public class StaticEdictGenerator
     {
-        public readonly string name;
-        public readonly string nicename;
-        public readonly IReadOnlyList<ModifierGenerator> modifiers;
+        public readonly string Name;
+        public readonly string NiceName;
+        private readonly IReadOnlyList<ModifierGenerator> modifiers;
 
         public StaticEdictGenerator(string name, IReadOnlyList<ModifierGenerator> modifiers)
         {
-            this.name = name;
+            Name = name;
             this.modifiers = modifiers;
-            nicename = name.Replace('_', ' ');
+            NiceName = name.Replace('_', ' ');
         }
 
-        public StaticEdictGenerator(string name, string nicename, IReadOnlyList<ModifierGenerator> modifiers)
+        public StaticEdictGenerator(string name, string niceName, IReadOnlyList<ModifierGenerator> modifiers)
         {
-            this.name = name;
+            Name = name;
             this.modifiers = modifiers;
-            this.nicename = nicename;
+            NiceName = niceName;
         }
 
         public override string ToString()
         {
-            return $"godEdict_{name} = {{\n{ModifierGenerator.Join(modifiers)}\n}}\n";
+            return $"godEdict_{Name} = {{\n{ModifierGenerator.Join(modifiers)}\n}}\n";
         }
 
         public static string Join(IEnumerable<StaticEdictGenerator> edicts)
         {
-            StringBuilder result = new StringBuilder();
+            var result = new StringBuilder();
             foreach (var edict in edicts)
             {
                 result.AppendLine(edict.ToString());

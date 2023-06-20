@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Text;
 
-namespace GodEdictGen.Data
+namespace GodEdictGen.Generators
 {
-    public class ModifierGenerator
+    public readonly struct ModifierGenerator
     {
         private static readonly NumberFormatInfo modiferValueFormat = new NumberFormatInfo()
         {
@@ -12,11 +12,11 @@ namespace GodEdictGen.Data
             NumberDecimalSeparator = "."
         };
 
-        private string modifierName;
-        private string modifierValueString;
-        private double? modifierValue;
+        private readonly string modifierName;
+        private readonly string modifierValueString;
+        private readonly double? modifierValue;
 
-        public string ModifierValue
+        private string ModifierValue
         {
             get
             {
@@ -31,21 +31,23 @@ namespace GodEdictGen.Data
             }
         }
 
-        public double ModifierValueDouble => (modifierValue ?? 00);
+        private double ModifierValueDouble => (modifierValue ?? 00);
 
         public ModifierGenerator(string modifierName, string modifierValue)
         {
             this.modifierName = modifierName;
             this.modifierValueString = modifierValue;
+            this.modifierValue = null;
         }
 
         public ModifierGenerator(string modifierName, double modifierValue)
         {
             this.modifierName = modifierName;
             this.modifierValue = modifierValue;
+            modifierValueString = null;
         }
 
-        public static IReadOnlyList<ModifierGenerator> GenerateSet(string modifierFormat, double modifierValue, params string[] modifierNames)
+        public static IReadOnlyList<ModifierGenerator>  GenerateSet(string modifierFormat, double modifierValue, params string[] modifierNames)
         {
             var sets = new ModifierGenerator[modifierNames.Length];
             for (int i = 0; i < modifierNames.Length; i++)
@@ -62,7 +64,7 @@ namespace GodEdictGen.Data
 
         public static string Join(IEnumerable<ModifierGenerator> modifiers)
         {
-            StringBuilder result = new StringBuilder();
+            var result = new StringBuilder();
             foreach (var modifier in modifiers)
             {
                 result.AppendLine(modifier.ToString());

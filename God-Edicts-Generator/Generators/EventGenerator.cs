@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 
-namespace GodEdictGen.Data
+namespace GodEdictGen.Generators
 {
-    public class EventGenerator
+    public readonly struct EventGenerator
     {
-        public readonly string edictName;
-        public readonly long ID0, ID1;
+        private readonly string edictName;
+        private readonly long idOn, idOff;
 
-        public EventGenerator(string edictName, long iD0, long iD1)
+        private EventGenerator(string edictName, long idOn, long idOff)
         {
             this.edictName = edictName;
-            ID0 = iD0;
-            ID1 = iD1;
+            this.idOn = idOn;
+            this.idOff = idOff;
         }
 
         public override string ToString()
@@ -20,7 +20,7 @@ namespace GodEdictGen.Data
             $"## {edictName}\n" +
             "country_event = { \n" +
             "\n" +
-            $"  id = godEdict_toggle.{ID0}\n" +
+            $"  id = godEdict_toggle.{idOn}\n" +
             "   hide_window = yes\n" +
             "   is_triggered_only = yes\n" +
             "\n" +
@@ -36,7 +36,7 @@ namespace GodEdictGen.Data
             "}\n" +
             "\n" +
             "country_event = {\n" +
-            $"  id = godEdict_toggle.{ID1}\n" +
+            $"  id = godEdict_toggle.{idOff}\n" +
             "   hide_window = yes\n" +
             "    is_triggered_only = yes\n" +
             "\n" +
@@ -49,7 +49,7 @@ namespace GodEdictGen.Data
             "}\n\n";
         }
 
-        public static string Join(IEnumerable<EventGenerator> generators)
+        private static string Join(IEnumerable<EventGenerator> generators)
         {
             return
                 "namespace = godEdict_toggle\n" + string.Join("", generators);
@@ -57,11 +57,11 @@ namespace GodEdictGen.Data
 
         public static string GenerateFile(Edicts edicts)
         {
-            List<EventGenerator> eventElements = new List<EventGenerator>();
-            int currentId = 0;
-            for (int i = 0; i < edicts.Length; i++)
+            var eventElements = new List<EventGenerator>();
+            var currentId = 0;
+            for (var i = 0; i < edicts.Length; i++)
             {
-                eventElements.Add(new EventGenerator(edicts[i].name, currentId++, currentId++));
+                eventElements.Add(new EventGenerator(edicts[i].Name, currentId++, currentId++));
             }
             return Join(eventElements);
         }

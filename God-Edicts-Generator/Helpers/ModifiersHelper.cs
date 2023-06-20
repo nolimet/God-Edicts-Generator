@@ -1,4 +1,4 @@
-﻿using GodEdictGen.Data;
+﻿using GodEdictGen.Generators;
 using System.Collections.Generic;
 using System.Linq;
 

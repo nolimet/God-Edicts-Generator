@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace GodEdictGen
 {
@@ -18,16 +19,11 @@ namespace GodEdictGen
         //Resources
         public static readonly string[] AllResources;
 
-        private static readonly string allResources = @"alloys, consumer_goods, energy, engineering_research, exotic_gases, influence, minerals, minor_artifacts, physics_research, rare_crystals, society_research, sr_dark_matter, sr_living, sr_zro, unity, volatile_motes";
-
-        public static readonly string[] ConstructionResources;
-        private static readonly string constructionResources = @"alloys, consumer_goods, energy, exotic_gases, minerals, rare_crystals, sr_dark_matter, sr_living, sr_zro, volatile_motes";
-
         public static readonly string[] RareResouces;
-        private static readonly string rareResources = @"exotic_gases, rare_crystals, sr_dark_matter, sr_living, sr_zro, volatile_motes";
+        private static readonly string rareResources = @"exotic_gases, rare_crystals, sr_dark_matter, sr_living_metal, sr_zro, volatile_motes, nanites";
 
         public static readonly string[] GeneralResources;
-        private static readonly string generalResources = @"alloys, consumer_goods, energy, minerals";
+        private static readonly string generalResources = @"alloys, consumer_goods, energy, minerals, food";
 
         public static readonly string[] ScienceResources;
         private static readonly string scienceResources = @"physics_research, society_research, engineering_research";
@@ -38,11 +34,11 @@ namespace GodEdictGen
             ShipClasses = Split(shipClasses);
             StationClasses = Split(stationClasses);
 
-            AllResources = Split(allResources);
-            ConstructionResources = Split(constructionResources);
             RareResouces = Split(rareResources);
             GeneralResources = Split(generalResources);
             ScienceResources = Split(scienceResources);
+
+            AllResources = RareResouces.Concat(GeneralResources).ToArray();
         }
 
         private static string[] Split(string value) => value.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);

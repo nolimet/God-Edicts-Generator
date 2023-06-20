@@ -1,6 +1,7 @@
-﻿using GodEdictGen.Data;
+﻿using GodEdictGen.Generators;
 using GodEdictGen.Helpers;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -32,18 +33,22 @@ namespace GodEdictGen
         {
             var edicts = new Edicts();
 
-            Console.WriteLine($"PATH : {System.IO.Directory.GetCurrentDirectory()}");
+            string dir = System.IO.Directory.GetCurrentDirectory();
+            Console.WriteLine($"PATH : {dir}");
             Console.WriteLine();
 
             await Task.Delay(100);
-            await FileWriter.WriteFileTXT(EdictToggleGenerator.GenerateFile(edicts), "edicts", @"common\edicts");
-            await FileWriter.WriteFileTXT(EventGenerator.GenerateFile(edicts), "events", @"events");
-            await FileWriter.WriteFileTXT(StaticEdictGenerator.Join(edicts.All), "statics", @"common\static_modifiers");
+            await FileWriter.WriteFileTxt(EdictToggleGenerator.GenerateFile(edicts), "edicts", @"common\edicts");
+            await FileWriter.WriteFileTxt(EventGenerator.GenerateFile(edicts), "events", @"events");
+            await FileWriter.WriteFileTxt(StaticEdictGenerator.Join(edicts.All), "statics", @"common\static_modifiers");
 
-            await FileWriter.WriteFileYML(LangueGenerator.GenerateFile(edicts, "english"), "english", @"localisation");
+            await FileWriter.WriteFileYml(LanguageGenerator.GenerateFile(edicts, "english"), "english", @"localisation");
 
             Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();
+            
+            Process.Start(dir);
+            
             Console.WriteLine("\nExiting program");
             await Task.Delay(500);
         }
